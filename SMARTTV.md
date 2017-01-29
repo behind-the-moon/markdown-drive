@@ -137,6 +137,7 @@ QUnit.test('Spatial test', function( assert ) {
  * Размер библиотек не привышает нескольких десятков килобайт, в сжатом виде ~10 (от дефлата зависит)
  * Производительные мутации, вот реализация [js-repaint-perfs](https://15lyfromsaturn.github.io/js-repaint-perfs/cakejs/index.html) для тортика.
  * Прозрачная реализация навигации, изкоробки.
+ * Для надстроек есть эвенты из навигации и самого DOM'a.
 
 ### Ссылки
 
@@ -146,4 +147,4 @@ QUnit.test('Spatial test', function( assert ) {
 * [Демка другого приложения с использованием данного стека](https://public-isbkayrpog.now.sh/)
 * [Контакт по вопросам (Twitter)](https://twitter.com/linuxenko)
 
-
+Прошу прощения за ридмистайл, надеюсь кому-то понравилось. Спасибо!
