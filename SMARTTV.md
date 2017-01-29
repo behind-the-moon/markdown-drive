@@ -126,7 +126,7 @@ QUnit.test('Spatial test', function( assert ) {
   app.tree.sn.focus(rectangles.children[2].el);
   assert.ok(rectangles.children[2].el === app.tree.sn._focus, 'Should focus third children');
   app.tree.sn.move('left'); // element floats left
-  assert.ok(rectangles.children[3].el === app.tree.sn._focus, 'Should move focus down');
+  assert.ok(rectangles.children[3].el === app.tree.sn._focus, 'Should move focus left');
 });
 ```
 </spoiler>
