@@ -58,13 +58,21 @@
 
 Буду использовать `babel` для приятного `jsx` синтаксиса управление уходит в `spatial-virtual-dom` обвернутый в `cakejs` и какой-нибудь `qunit` для простоты демонстрации.
 
-Может показаться немного специфичным, надеюсь удалось раскрыть в комментариях все заклинаня:
+Может показаться немного специфичным, надеюсь удалось раскрыть в комментариях все заклянания:
 
+<spoiler title="Пример кода">
 ```js
 /** @jsx h */   // прагма
 
-const {spatial, Cream, create} = cake; // или import {s...} from 'cakejs2-spatial; если `npm i cakejs2-spatial`
-const h = spatial({ keys: {  // Создаем гиперскрипт и назначаем клавиши
+/**
+ * или import {s...} from 'cakejs2-spatial; если `npm i cakejs2-spatial`
+ */
+const {spatial, Cream, create} = cake; 
+
+/**
+ * Создаем гиперскрипт и назначаем клавиши
+ */
+const h = spatial({ keys: {
   LEFT: 37,
   RIGHT: 39,
   UP: 38,
@@ -72,7 +80,10 @@ const h = spatial({ keys: {  // Создаем гиперскрипт и наз�
   ENTER: 13
 }});
 
-const app = create({  // создание апы, сохраняем инстанс для тестов
+/**
+ * создание апы, сохраняем инстанс для тестов
+ */
+const app = create({ 
   element : document.getElementById('application')
 })
 .route('*', 'rectangles');
@@ -100,9 +111,12 @@ function createRectangles () {
   }
 }
 ```
+</spoiler>
+[CODEPEN Пример приложения](http://codepen.io/linuxenko/pen/MJONar)
 
 Тестировать пока сложновато, нужны шорткуты (PR велкоме):
 
+<spoiler title="Код теста">
 ```js
 QUnit.test('Spatial test', function( assert ) {
   const rectangles = app.tree.children[0];
@@ -115,8 +129,15 @@ QUnit.test('Spatial test', function( assert ) {
   assert.ok(rectangles.children[3].el === app.tree.sn._focus, 'Should move focus down');
 });
 ```
+</spoiler>
+[CODEPEN Пример тестов](http://codepen.io/linuxenko/pen/MJONBP?editors=1011)
 
 ### Ссылки
-[CODEPEN Пример приведенного приложения](http://codepen.io/linuxenko/pen/MJONar)
-[CODEPEN Пример применения тестов](http://codepen.io/linuxenko/pen/MJONBP?editors=1011)
+
+* [Implementing TV remote control navigation (MDN)](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS_for_TV/TV_remote_control_navigation)
+* [cakejs2-spatial (NPM)](https://www.npmjs.com/package/cakejs2-spatial)
+* [spatial-virtual-dom (GitHub)](https://github.com/linuxenko/spatial-virtual-dom)
+* [Демка другого приложения с использованием данного стека](https://public-isbkayrpog.now.sh/)
+* [Контакт по вопросам (Twitter)](https://twitter.com/linuxenko)
+
 
