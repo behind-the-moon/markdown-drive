@@ -130,7 +130,7 @@ QUnit.test('Spatial test', function( assert ) {
 });
 ```
 </spoiler>
-[Пример тестов (CODEPEN)](http://codepen.io/linuxenko/pen/MJONBP?editors=1011)
+[Пример тестов (CODEPEN)](http://codepen.io/linuxenko/pen/MJONBP)
 
 ### Ссылки
 
