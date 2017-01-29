@@ -112,7 +112,7 @@ function createRectangles () {
 }
 ```
 </spoiler>
-[CODEPEN Пример приложения](http://codepen.io/linuxenko/pen/MJONar)
+[Пример приложения (CODEPEN)](http://codepen.io/linuxenko/pen/MJONar)
 
 Тестировать пока сложновато, нужны шорткуты (PR велкоме):
 
@@ -130,7 +130,7 @@ QUnit.test('Spatial test', function( assert ) {
 });
 ```
 </spoiler>
-[CODEPEN Пример тестов](http://codepen.io/linuxenko/pen/MJONBP?editors=1011)
+[Пример тестов (CODEPEN)](http://codepen.io/linuxenko/pen/MJONBP?editors=1011)
 
 ### Ссылки
 
