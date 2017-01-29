@@ -56,4 +56,67 @@
 
 ### Пример приложения
 
+Буду использовать `babel` для приятного `jsx` синтаксиса управление уходит в `spatial-virtual-dom` обвернутый в `cakejs` и какой-нибудь `qunit` для простоты демонстрации.
+
+Может показаться немного специфичным, надеюсь удалось раскрыть в комментариях все заклинаня:
+
+```js
+/** @jsx h */   // прагма
+
+const {spatial, Cream, create} = cake; // или import {s...} from 'cakejs2-spatial; если `npm i cakejs2-spatial`
+const h = spatial({ keys: {  // Создаем гиперскрипт и назначаем клавиши
+  LEFT: 37,
+  RIGHT: 39,
+  UP: 38,
+  DOWN: 40,
+  ENTER: 13
+}});
+
+const app = create({  // создание апы, сохраняем инстанс для тестов
+  element : document.getElementById('application')
+})
+.route('*', 'rectangles');
+
+Cream.extend({   // компонент
+  _namespace: 'rectangles',
+  render : createRectangles()
+});
+
+function createRectangles () {
+  let isFocusable = true;
+  
+  return function () {
+    return (
+      <div className="rectangles">
+        <div focusable={isFocusable} className="rectangles--left"></div>
+        <div focusable={isFocusable} className="rectangles--left"></div>
+        <div focusable={isFocusable} className="rectangles--right"></div>
+        <div focusable={isFocusable} className="rectangles--right"></div>
+        <div focusable={isFocusable} className="rectangles--right"></div>
+        <div focusable={isFocusable} className="rectangles--left"></div>
+        <div focusable={isFocusable} className="rectangles--left"></div>
+      </div>
+    )
+  }
+}
+```
+
+Тестировать пока сложновато, нужны шорткуты (PR велкоме):
+
+```js
+QUnit.test('Spatial test', function( assert ) {
+  const rectangles = app.tree.children[0];
+  assert.ok( 7 === app.tree.sn._collection.length, 'Should spatialize 7 elements');
+  assert.ok( null === app.tree.sn._focus, 'Should not focus any of them');
+  
+  app.tree.sn.focus(rectangles.children[2].el);
+  assert.ok(rectangles.children[2].el === app.tree.sn._focus, 'Should focus third children');
+  app.tree.sn.move('left'); // element floats left
+  assert.ok(rectangles.children[3].el === app.tree.sn._focus, 'Should move focus down');
+});
+```
+
 ### Ссылки
+[CODEPEN Пример приведенного приложения](http://codepen.io/linuxenko/pen/MJONar)
+[CODEPEN Пример применения тестов](http://codepen.io/linuxenko/pen/MJONBP?editors=1011)
+
