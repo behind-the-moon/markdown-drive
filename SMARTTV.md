@@ -132,6 +132,12 @@ QUnit.test('Spatial test', function( assert ) {
 </spoiler>
 [Пример тестов (CODEPEN)](http://codepen.io/linuxenko/pen/MJONBP)
 
+### Итоги
+ 
+ * Размер библиотек не привышает нескольких десятков килобайт, в сжатом виде ~15 (не очень получается замерить)
+ * Производительные мутации, вот реализация [js-repaint-perfs](https://15lyfromsaturn.github.io/js-repaint-perfs/cakejs/index.html) для тортика.
+ * Прозрачная реализация навигации, изкоробки.
+
 ### Ссылки
 
 * [Implementing TV remote control navigation (MDN)](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS_for_TV/TV_remote_control_navigation)
