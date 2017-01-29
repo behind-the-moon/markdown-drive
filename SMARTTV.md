@@ -114,7 +114,7 @@ function createRectangles () {
 </spoiler>
 [Пример приложения (CODEPEN)](http://codepen.io/linuxenko/pen/MJONar)
 
-Тестировать пока сложновато, нужны шорткуты (PR велкоме):
+Тестировать пока сложновато, нужны шорткаты (PR велкоме):
 
 <spoiler title="Код теста">
 ```js
