@@ -147,4 +147,4 @@ QUnit.test('Spatial test', function( assert ) {
 * [Демка другого приложения с использованием данного стека](https://public-isbkayrpog.now.sh/)
 * [Контакт по вопросам (Twitter)](https://twitter.com/linuxenko)
 
-Прошу прощения за ридмистайл, надеюсь кому-то понравилось. Спасибо!
+Прошу прощения за ридмистайл. Спасибо!
